@@ -28,6 +28,8 @@ function generateRandomTheme() {
 // POST /submit - Save form data
 app.post('/submit', async (req, res) => {
   try {
+    console.log("📩 Received body:", req.body);  // ADD THIS
+
     const db = await connectDB();
     const collection = db.collection('sites');
 
@@ -44,13 +46,15 @@ app.post('/submit', async (req, res) => {
     data.theme = generateRandomTheme();
 
     await collection.insertOne(data);
+    console.log("✅ Inserted:", data);  // ADD THIS
 
     res.json({ success: true, slug });
   } catch (err) {
-    console.error(err);
+    console.error("❌ Error submitting form:", err);
     res.status(500).json({ success: false, message: 'Server error' });
   }
 });
+
 
 // GET /user/:slug
 app.get('/user/:slug', async (req, res) => {
