@@ -40,11 +40,11 @@ export default function Form() {
     e.preventDefault();
     setLoading(true);
     try {
-const res = await fetch("web-creator-mu.vercel.app", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+const res = await fetch("https://web-creator-umit.onrender.com/submit", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
       const data = await res.json();
       if (data.success) {
         navigate(`/${data.slug}`);

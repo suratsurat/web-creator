@@ -1,14 +1,18 @@
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 const slugify = require('slugify');
-const connectDB = require('./mongo'); // MongoDB connection
-require('dotenv').config(); // Loads MONGO_URI
+const connectDB = require('./mongo');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// Allow CORS from Vercel
+app.use(cors({
+  origin: 'https://web-creator-mu.vercel.app', // or "*" for dev
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Random theme generator
@@ -48,7 +52,7 @@ app.post('/submit', async (req, res) => {
   }
 });
 
-// GET /user/:slug - Get user data
+// GET /user/:slug
 app.get('/user/:slug', async (req, res) => {
   try {
     const db = await connectDB();
@@ -66,14 +70,6 @@ app.get('/user/:slug', async (req, res) => {
   }
 });
 
-// Serve React frontend (for production deployment)
-app.use(express.static(path.join(__dirname, '../frontend/ai/build')));
-
-app.get('/{*any}', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/ai/build/index.html'));
-});
-
-// Start the server
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
