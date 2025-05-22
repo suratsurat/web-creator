@@ -6,7 +6,7 @@ export default function UserSite() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${slug}`)
+  fetch(`https://web-creator-umit.onrender.com/user/${slug}`)
       .then((res) => {
         if (!res.ok) throw new Error("User not found");
         return res.json();
