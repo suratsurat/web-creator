@@ -67,10 +67,10 @@ app.get('/user/:slug', async (req, res) => {
 });
 
 // Serve React frontend (for production deployment)
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/ai/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+app.get('/{*any}', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/ai/build/index.html'));
 });
 
 // Start the server
