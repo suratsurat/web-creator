@@ -6,7 +6,7 @@ export default function UserSite() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://your-backend.onrender.com/user/${slug}`)
+    fetch(`http://localhost:5000/user/${slug}`)
       .then((res) => {
         if (!res.ok) throw new Error("User not found");
         return res.json();
@@ -67,3 +67,4 @@ export default function UserSite() {
     </div>
   );
 }
+  

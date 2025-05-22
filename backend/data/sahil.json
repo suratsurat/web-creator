@@ -1,0 +1,17 @@
+{
+  "business_name": "sahil",
+  "owner_name": "sahil",
+  "mobile_number": "8090",
+  "email": "jk@hk",
+  "location": "surat",
+  "our_specialities": "ok",
+  "products": [],
+  "feedbacks": [],
+  "slug": "sahil",
+  "theme": {
+    "primaryColor": "#FF6347",
+    "font": "Roboto",
+    "layoutType": "flex-row",
+    "animation": "animate-fade"
+  }
+}

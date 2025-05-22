@@ -1,0 +1,24 @@
+{
+  "bussiness_name": "Prodev",
+  "owner_name": "Parth",
+  "mobile_number": "873929838",
+  "email": "jk@hk",
+  "whatsapp_number": "",
+  "location": "",
+  "phone_number": "",
+  "comapny_name": "",
+  "year_of_east": "",
+  "gst_number": "",
+  "our_specialities": "",
+  "upi_id": "",
+  "enquiry_name": "",
+  "enquiry_phone_number": "",
+  "enquiry_email": "",
+  "enquiry_message": "",
+  "products": "[{\"product_name\":\"Sample Product 1\",\"product_description\":\"Description 1\"},{\"product_name\":\"Sample Product 2\",\"product_description\":\"Description 2\"}]",
+  "feedbacks": "[{\"feedback_name\":\"Customer 1\",\"message\":\"Great service!\"},{\"feedback_name\":\"Customer 2\",\"message\":\"Loved it.\"}]",
+  "theme": {
+    "primaryColor": "#FF6347",
+    "fontFamily": "Roboto, sans-serif"
+  }
+}
