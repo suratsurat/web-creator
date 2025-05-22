@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 5000;
 
 // Allow CORS from Vercel
 app.use(cors({
-  origin: 'https://web-creator-mu.vercel.app', // or "*" for dev
-  credentials: true
+  origin: '*'
 }));
+
 
 app.use(express.json());
 
