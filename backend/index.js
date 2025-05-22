@@ -71,5 +71,9 @@ app.get('/user/:slug', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  const isRender = process.env.RENDER === 'true';
+  const url = isRender
+    ? 'https://web-creator-umit.onrender.com'
+    : `http://localhost:${PORT}`;
+  console.log(`✅ Server running on ${url}`);
 });
